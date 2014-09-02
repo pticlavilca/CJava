@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<project basedir="." name="CJava" default="msg">
+    <target name="msg">
+        <echo>${ant.project.name}</echo>
+    </target>
+
+    <property name="src.dir" value="src/main/java"/>
+    <property name="class.dir" value="target/classes/"/>
+
+
+    <path id="class.path">
+        <pathelement location="${src.dir}"/>
+        <pathelement location="${class.dir}"/>
+    </path>
+
+
+    <target name="execute" depends="msg">
+        <java classname="com.jpaul.Launch">
+            <classpath refid="class.path"/>
+        </java>
+    </target>
+
+</project>
